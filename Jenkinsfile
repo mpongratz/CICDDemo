@@ -13,13 +13,10 @@ pipeline {
                 }
         }
         stage('Deploy CloudHub') {
-            environment {
-                ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')
-            }
             steps {
-                echo 'Deploying mule project due to the latest code commit…'
-                echo 'Deploying to the configured environment….'
-                sh 'mvn package deploy -DmuleDeploy -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW} -DworkerType=Micro -Dworkers=1 -Dregion=us-west-2'
+                withCredentials([usernamePassword(credentialsId: '67eb39c4-65d3-4084-b4ba-df314c3e07d8', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    sh 'mvn package deploy -DmuleDeploy -Dusername=${USERNAME} -Dpassword=${PASSWORD} -DworkerType=Micro -Dworkers=1 -Dregion=us-west-2'
+                }
             }
         }
     }
