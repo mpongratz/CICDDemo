@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy CloudHub') {
             steps {
                 withCredentials([usernamePassword(credentialsId: '67eb39c4-65d3-4084-b4ba-df314c3e07d8', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                    sh 'mvn clean deploy -DmuleDeploy -Dusername=${USERNAME} -Dpassword=${PASSWORD}
+                    sh 'mvn clean deploy -DmuleDeploy -Dusername=${USERNAME} -Dpassword=${PASSWORD}'
                 }
             }
         }
