@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deploy CloudHub') {
             environment {
-                ANYPOINT_CREDENTIALS = credentials('anypointPlatform')
+                ANYPOINT_CREDENTIALS = credentials('anypoint.credentials')
             }
             steps {
                 echo 'Deploying mule project due to the latest code commit…'
