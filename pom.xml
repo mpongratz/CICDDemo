@@ -37,10 +37,10 @@
 						<password>${password}</password>
 						<applicationName>${project.artifactId}</applicationName>
 						<environment>Sandbox</environment>
-						<workerType>${workerType}</workerType>
+						<!--<workerType>${workerType}</workerType>-->
 						<workers>1</workers>
 						<objectStoreV2>true</objectStoreV2>
-						<region> ${region} </region>
+						<!--<region> ${region} </region>-->
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
