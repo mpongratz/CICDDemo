@@ -13,7 +13,7 @@
 			<flow-ref doc:name="Flow-ref to demoprojectFlow" doc:id="c0f0d061-b589-4a78-a211-ca1f8f59f73b" name="demoprojectFlow"/>
 		</munit:execution>
 		<munit:validation >
-			<munit-tools:assert-that doc:name="Assert that" doc:id="359227a1-fd0a-4413-bcbc-339a171829d4" expression="#[payload]" is="#[MunitTools::nullValue()]"/>
+			<munit-tools:assert-that doc:name="Assert that" doc:id="359227a1-fd0a-4413-bcbc-339a171829d4" expression="#[payload]" is="#[MunitTools::isNullValue()]"/>
 		</munit:validation>
 	</munit:test>
 
